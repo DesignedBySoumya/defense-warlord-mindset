@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import WelcomePanel from "./defense/WelcomePanel";
 import MissionSetup from "./defense/MissionSetup";
-import ResourcesPanel from "./defense/ResourcesPanel";
+import SmartResourcesPanel from "./defense/SmartResourcesPanel";
 import FocusRitual from "./defense/FocusRitual";
-import StudySession from "./defense/StudySession";
+import EnhancedStudySession from "./defense/EnhancedStudySession";
 import SessionLog from "./defense/SessionLog";
 import ExitCheck from "./defense/ExitCheck";
 
@@ -20,11 +19,18 @@ const DefenseMode = () => {
     pyqRelevance: 3,
     energyLevel: 50,
     resources: [] as string[],
+    smartResources: [] as any[],
     studyTime: 0,
     learnings: '',
     confusions: '',
     reviewItems: [] as string[],
-    topicStatus: ''
+    topicStatus: '',
+    focusMetrics: {
+      tabSwitches: 0,
+      focusBreaks: 0,
+      totalResources: 0,
+      completedResources: 0
+    }
   });
 
   const updateSessionData = (data: Partial<typeof sessionData>) => {
@@ -62,7 +68,7 @@ const DefenseMode = () => {
           />
         )}
         {currentStep === 'resources' && (
-          <ResourcesPanel
+          <SmartResourcesPanel
             sessionData={sessionData}
             updateSessionData={updateSessionData}
             onNext={nextStep}
@@ -72,7 +78,7 @@ const DefenseMode = () => {
           <FocusRitual onNext={nextStep} />
         )}
         {currentStep === 'study' && (
-          <StudySession
+          <EnhancedStudySession
             sessionData={sessionData}
             updateSessionData={updateSessionData}
             onNext={nextStep}
