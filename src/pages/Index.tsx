@@ -15,7 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center p-4">
       <div className="text-center max-w-6xl mx-auto">
         <div className="mb-12">
-          <h1 className="text-6xl font-black text-white mb-6 tracking-tight">
+          <h1 className="text-6xl font-black text-white mb-6 tracking-tight caret-transparent select-none">
             ⚔️ BATTLEFIELD
           </h1>
           <p className="text-xl text-slate-300 font-medium mb-2">
@@ -102,22 +102,22 @@ const Index = () => {
                 🏹 WAR
               </h2>
               <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                Prepare like a <strong className="text-white">marksman</strong>. Mock battles, exam pressure drills, and strategic training to master the real fight.
+                Prepare like a <strong className="text-white">warrior</strong>. Mock battles, pressure drills, and strategic training for the real fight.
               </p>
             </div>
             
             <div className="text-left space-y-3 mb-6">
               <div className="flex items-center text-slate-200">
                 <span className="text-orange-400 mr-3">🎯</span>
-                <span>Full-length and subject-wise test drills</span>
+                <span>Full-length & subject-wise drills</span>
               </div>
               <div className="flex items-center text-slate-200">
                 <span className="text-orange-400 mr-3">⚔️</span>
-                <span>Test pressure training with war-tuned environment</span>
+                <span>War-tuned environment for pressure training</span>
               </div>
               <div className="flex items-center text-slate-200">
-                <span className="text-orange-400 mr-3">📈</span>
-                <span>Deep analysis to expose weaknesses before the real fight</span>
+                <span className="text-orange-400 mr-3">📊</span>
+                <span>Expose weaknesses before the real battle</span>
               </div>
             </div>
 
