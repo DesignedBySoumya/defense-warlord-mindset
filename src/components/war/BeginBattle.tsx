@@ -81,59 +81,54 @@ const BeginBattle = ({ onEnd }: BeginBattleProps) => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center text-white">
-          <h2 className="text-2xl font-bold mb-4 caret-transparent select-none">No battle configuration found</h2>
-          <p className="text-slate-300 caret-transparent select-none">Please configure your battle first.</p>
+          <h2 className="text-2xl font-bold mb-4">No battle configuration found</h2>
+          <p className="text-slate-300">Please configure your battle first.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div 
-      className="min-h-screen flex items-center justify-center p-4 relative bg-cover bg-center"
-      style={{ 
-        backgroundImage: `url(/lovable-uploads/1141477c-fa0b-4477-bfaf-0585612e0670.png)` 
-      }}
-    >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+    <div className="min-h-screen flex items-center justify-center p-4 relative">
+      {/* War-themed background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-950/80 via-slate-900/90 to-slate-950/80"></div>
       
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">
           <div className="flex justify-between items-center text-slate-300 mb-4">
-            <div className="text-lg font-semibold caret-transparent select-none">
+            <div className="text-lg font-semibold">
               TARGET: {config.duration}MIN
             </div>
             <div className="flex items-center text-orange-400">
               <div className="w-3 h-3 bg-orange-400 rounded-full mr-2 animate-pulse"></div>
-              <span className="caret-transparent select-none">BATTLE MODE ACTIVE</span>
+              BATTLE MODE ACTIVE
             </div>
           </div>
         </div>
 
         {/* Motivational Message */}
         <div className="mb-8">
-          <p className="text-xl text-slate-200 font-medium animate-fade-in caret-transparent select-none">
+          <p className="text-xl text-slate-200 font-medium animate-fade-in">
             "{motivationalMessage}"
           </p>
         </div>
 
         {/* Main Timer */}
         <div className="mb-12">
-          <div className={`text-8xl font-black font-mono mb-4 caret-transparent select-none ${getTimerColor()} ${timeLeft < 300 ? 'animate-pulse' : ''}`}>
+          <div className={`text-8xl font-black font-mono mb-4 ${getTimerColor()} ${timeLeft < 300 ? 'animate-pulse' : ''}`}>
             {formatTime(timeLeft)}
           </div>
-          <div className="text-2xl text-slate-300 font-semibold mb-6 caret-transparent select-none">
+          <div className="text-2xl text-slate-300 font-semibold mb-6">
             {config.testType === 'full-length' ? 'FULL BATTLE' : 'SUBJECT BATTLE'}
           </div>
 
           {/* Progress Bar */}
           <div className="max-w-2xl mx-auto mb-8">
             <div className="flex justify-between text-sm text-slate-400 mb-2">
-              <span className="caret-transparent select-none">BATTLE COMMENCED</span>
-              <span className="caret-transparent select-none">{Math.round(getProgressPercentage())}% COMPLETE</span>
-              <span className="caret-transparent select-none">VICTORY</span>
+              <span>BATTLE COMMENCED</span>
+              <span>{Math.round(getProgressPercentage())}% COMPLETE</span>
+              <span>VICTORY</span>
             </div>
             <div className="w-full bg-slate-700/50 rounded-full h-3 overflow-hidden">
               <div 
@@ -142,11 +137,11 @@ const BeginBattle = ({ onEnd }: BeginBattleProps) => {
               />
             </div>
             <div className="flex justify-between text-xs text-slate-500 mt-2">
-              <span className="caret-transparent select-none">●</span>
-              <span className="text-orange-400 caret-transparent select-none">
+              <span>●</span>
+              <span className="text-orange-400">
                 {`█`.repeat(Math.floor(getProgressPercentage() / 10))}
               </span>
-              <span className="caret-transparent select-none">●</span>
+              <span>●</span>
             </div>
           </div>
         </div>
@@ -162,7 +157,7 @@ const BeginBattle = ({ onEnd }: BeginBattleProps) => {
           </Button>
           
           {timeLeft < 60 && (
-            <div className="text-red-400 font-semibold animate-pulse caret-transparent select-none">
+            <div className="text-red-400 font-semibold animate-pulse">
               ⚠️ Final moments - stay strong!
             </div>
           )}
@@ -172,21 +167,21 @@ const BeginBattle = ({ onEnd }: BeginBattleProps) => {
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div className="bg-slate-800/30 rounded-lg p-3">
             <div className="text-slate-400 text-sm">Type</div>
-            <div className="text-white font-semibold caret-transparent select-none">{config.testType}</div>
+            <div className="text-white font-semibold">{config.testType}</div>
           </div>
           <div className="bg-slate-800/30 rounded-lg p-3">
             <div className="text-slate-400 text-sm">Duration</div>
-            <div className="text-white font-semibold caret-transparent select-none">{config.duration}m</div>
+            <div className="text-white font-semibold">{config.duration}m</div>
           </div>
           <div className="bg-slate-800/30 rounded-lg p-3">
             <div className="text-slate-400 text-sm">Elapsed</div>
-            <div className="text-white font-semibold caret-transparent select-none">
+            <div className="text-white font-semibold">
               {formatTime(totalDuration - timeLeft)}
             </div>
           </div>
           <div className="bg-slate-800/30 rounded-lg p-3">
             <div className="text-slate-400 text-sm">Remaining</div>
-            <div className="text-white font-semibold caret-transparent select-none">
+            <div className="text-white font-semibold">
               {formatTime(timeLeft)}
             </div>
           </div>

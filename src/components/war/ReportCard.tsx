@@ -34,7 +34,6 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
   const handleSaveReport = () => {
     if (!config) return;
 
-    // Convert string inputs to numbers for the report
     const report = {
       id: Date.now(),
       date: new Date().toISOString(),
@@ -46,30 +45,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
         focusScore: 78,
         tabSwitches: 2
       },
-      performance: {
-        totalQuestions: parseInt(reportData.totalQuestions) || 0,
-        attempted: parseInt(reportData.attempted) || 0,
-        correct: parseInt(reportData.correct) || 0,
-        subjects: {
-          math: { 
-            attempted: parseInt(reportData.subjects.math.attempted) || 0, 
-            correct: parseInt(reportData.subjects.math.correct) || 0 
-          },
-          english: { 
-            attempted: parseInt(reportData.subjects.english.attempted) || 0, 
-            correct: parseInt(reportData.subjects.english.correct) || 0 
-          },
-          reasoning: { 
-            attempted: parseInt(reportData.subjects.reasoning.attempted) || 0, 
-            correct: parseInt(reportData.subjects.reasoning.correct) || 0 
-          },
-          gk: { 
-            attempted: parseInt(reportData.subjects.gk.attempted) || 0, 
-            correct: parseInt(reportData.subjects.gk.correct) || 0 
-          }
-        },
-        reflection: reportData.reflection
-      },
+      performance: reportData,
       timestamp: Date.now()
     };
 
@@ -87,7 +63,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center text-white">
-          <h2 className="text-2xl font-bold mb-4 caret-transparent select-none">No battle data found</h2>
+          <h2 className="text-2xl font-bold mb-4">No battle data found</h2>
           <Button onClick={onNewBattle}>Start New Battle</Button>
         </div>
       </div>
@@ -98,10 +74,10 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 max-w-4xl w-full">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-black text-white mb-4 caret-transparent select-none">
+          <h1 className="text-4xl font-black text-white mb-4">
             ⚔️ BATTLE REPORT
           </h1>
-          <p className="text-slate-300 text-lg caret-transparent select-none">
+          <p className="text-slate-300 text-lg">
             Debrief your performance, warrior
           </p>
         </div>
@@ -109,24 +85,24 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Battle Stats */}
           <div className="bg-slate-700/30 rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-white mb-4 caret-transparent select-none">⚡ BATTLE STATS</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">⚡ BATTLE STATS</h2>
             <div className="space-y-4">
               <div>
-                <div className="text-3xl font-black text-orange-400 mb-1 caret-transparent select-none">
+                <div className="text-3xl font-black text-orange-400 mb-1">
                   {sessionDuration}
                 </div>
-                <div className="text-slate-300 caret-transparent select-none">MINUTES CONQUERED</div>
+                <div className="text-slate-300">MINUTES CONQUERED</div>
               </div>
               <div>
                 <div className="text-slate-400 text-sm">Battle Type:</div>
-                <div className="text-white font-semibold uppercase caret-transparent select-none">
+                <div className="text-white font-semibold uppercase">
                   {config.testType.replace('-', ' ')}
                 </div>
               </div>
               {accuracy > 0 && (
                 <div>
                   <div className="text-slate-400 text-sm">Accuracy:</div>
-                  <div className={`text-2xl font-bold caret-transparent select-none ${
+                  <div className={`text-2xl font-bold ${
                     accuracy >= 80 ? 'text-yellow-400' : 
                     accuracy >= 60 ? 'text-orange-400' : 'text-red-400'
                   }`}>
@@ -140,7 +116,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
           {/* Performance Analysis */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-white mb-4 caret-transparent select-none">🎯 Overall Performance</h3>
+              <h3 className="text-xl font-bold text-white mb-4">🎯 Overall Performance</h3>
               <div className="grid grid-cols-3 gap-4">
                 <div>
                   <label className="block text-slate-400 text-sm mb-1">Total Questions</label>
@@ -148,7 +124,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
                     type="number"
                     value={reportData.totalQuestions}
                     onChange={(e) => setReportData(prev => ({ ...prev, totalQuestions: e.target.value }))}
-                    className="bg-slate-700/50 border-slate-600 text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="bg-slate-700/50 border-slate-600 text-white"
                     placeholder="0"
                   />
                 </div>
@@ -158,7 +134,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
                     type="number"
                     value={reportData.attempted}
                     onChange={(e) => setReportData(prev => ({ ...prev, attempted: e.target.value }))}
-                    className="bg-slate-700/50 border-slate-600 text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="bg-slate-700/50 border-slate-600 text-white"
                     placeholder="0"
                   />
                 </div>
@@ -168,7 +144,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
                     type="number"
                     value={reportData.correct}
                     onChange={(e) => setReportData(prev => ({ ...prev, correct: e.target.value }))}
-                    className="bg-slate-700/50 border-slate-600 text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    className="bg-slate-700/50 border-slate-600 text-white"
                     placeholder="0"
                   />
                 </div>
@@ -176,11 +152,11 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-white mb-4 caret-transparent select-none">📚 Subject-wise Analysis</h3>
+              <h3 className="text-xl font-bold text-white mb-4">📚 Subject-wise Analysis</h3>
               <div className="grid grid-cols-2 gap-4">
                 {Object.entries(reportData.subjects).map(([subject, data]) => (
                   <div key={subject} className="bg-slate-700/30 rounded-lg p-3">
-                    <div className="text-white font-semibold mb-2 capitalize caret-transparent select-none">{subject}</div>
+                    <div className="text-white font-semibold mb-2 capitalize">{subject}</div>
                     <div className="grid grid-cols-2 gap-2">
                       <Input
                         type="number"
@@ -193,7 +169,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
                             [subject]: { ...prev.subjects[subject as keyof typeof prev.subjects], attempted: e.target.value }
                           }
                         }))}
-                        className="bg-slate-600/50 border-slate-500 text-white text-sm [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        className="bg-slate-600/50 border-slate-500 text-white text-sm"
                       />
                       <Input
                         type="number"
@@ -206,7 +182,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
                             [subject]: { ...prev.subjects[subject as keyof typeof prev.subjects], correct: e.target.value }
                           }
                         }))}
-                        className="bg-slate-600/50 border-slate-500 text-white text-sm [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                        className="bg-slate-600/50 border-slate-500 text-white text-sm"
                       />
                     </div>
                   </div>
@@ -215,7 +191,7 @@ const ReportCard = ({ onNext, onNewBattle }: ReportCardProps) => {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-white mb-4 caret-transparent select-none">🧠 Battle Reflection</h3>
+              <h3 className="text-xl font-bold text-white mb-4">🧠 Battle Reflection</h3>
               <Textarea
                 value={reportData.reflection}
                 onChange={(e) => setReportData(prev => ({ ...prev, reflection: e.target.value }))}
