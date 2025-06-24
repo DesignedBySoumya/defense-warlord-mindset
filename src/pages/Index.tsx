@@ -13,7 +13,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-black flex items-center justify-center p-4">
-      <div className="text-center max-w-4xl mx-auto">
+      <div className="text-center max-w-6xl mx-auto">
         <div className="mb-12">
           <h1 className="text-6xl font-black text-white mb-6 tracking-tight">
             ⚔️ BATTLEFIELD
@@ -26,7 +26,7 @@ const Index = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Defense Mode */}
           <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
             <div className="mb-6">
@@ -94,10 +94,44 @@ const Index = () => {
               ENTER ATTACK MODE
             </button>
           </div>
+
+          {/* War Mode */}
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
+            <div className="mb-6">
+              <h2 className="text-4xl font-black text-white mb-4">
+                🏹 WAR
+              </h2>
+              <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                Prepare like a <strong className="text-white">marksman</strong>. Mock battles, exam pressure drills, and strategic training to master the real fight.
+              </p>
+            </div>
+            
+            <div className="text-left space-y-3 mb-6">
+              <div className="flex items-center text-slate-200">
+                <span className="text-orange-400 mr-3">🎯</span>
+                <span>Full-length and subject-wise test drills</span>
+              </div>
+              <div className="flex items-center text-slate-200">
+                <span className="text-orange-400 mr-3">⚔️</span>
+                <span>Test pressure training with war-tuned environment</span>
+              </div>
+              <div className="flex items-center text-slate-200">
+                <span className="text-orange-400 mr-3">📈</span>
+                <span>Deep analysis to expose weaknesses before the real fight</span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => navigate('/war')}
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-black text-lg px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl"
+            >
+              ENTER WAR MODE
+            </button>
+          </div>
         </div>
         
         <p className="text-slate-400 text-sm">
-          "Defense is not weakness. Attack is not aggression. Both are <strong>discipline without applause</strong>."
+          "Defense is not weakness. Attack is not aggression. War is not violence. All are <strong>discipline without applause</strong>."
         </p>
       </div>
     </div>
