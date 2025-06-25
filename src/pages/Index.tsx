@@ -107,7 +107,7 @@ const Index = () => {
                   🏹 WAR
                 </h2>
                 <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                  Prepare like a <strong className="text-white">warrior</strong>. Mock battles, exam pressure drills, and strategic training.
+                  Prepare like a <strong className="text-white">warrior</strong>. Mock battles and strategic training.
                 </p>
               </div>
               
