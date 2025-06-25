@@ -28,28 +28,30 @@ const Index = () => {
         
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Defense Mode */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
-            <div className="mb-6">
-              <h2 className="text-4xl font-black text-white mb-4">
-                🛡️ DEFENSE
-              </h2>
-              <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                Build your <strong className="text-white">mental weapons</strong>, strategy, energy, and rituals.
-              </p>
-            </div>
-            
-            <div className="text-left space-y-3 mb-6">
-              <div className="flex items-center text-slate-200">
-                <span className="text-blue-400 mr-3">🧱</span>
-                <span>Foundation over speed</span>
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 min-h-[480px] flex flex-col justify-between">
+            <div>
+              <div className="mb-6">
+                <h2 className="text-4xl font-black text-white mb-4 caret-transparent select-none">
+                  🛡️ DEFENSE
+                </h2>
+                <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                  Build your <strong className="text-white">mental weapons</strong>, strategy, energy, and rituals.
+                </p>
               </div>
-              <div className="flex items-center text-slate-200">
-                <span className="text-blue-400 mr-3">🎯</span>
-                <span>Pure focus, zero distractions</span>
-              </div>
-              <div className="flex items-center text-slate-200">
-                <span className="text-blue-400 mr-3">🧠</span>
-                <span>Self-respect through discipline</span>
+              
+              <div className="text-left space-y-3 mb-6">
+                <div className="flex items-center text-slate-200">
+                  <span className="text-blue-400 mr-3">🧱</span>
+                  <span>Foundation over speed</span>
+                </div>
+                <div className="flex items-center text-slate-200">
+                  <span className="text-blue-400 mr-3">🎯</span>
+                  <span>Pure focus, zero distractions</span>
+                </div>
+                <div className="flex items-center text-slate-200">
+                  <span className="text-blue-400 mr-3">🧠</span>
+                  <span>Self-respect through discipline</span>
+                </div>
               </div>
             </div>
 
@@ -62,28 +64,30 @@ const Index = () => {
           </div>
 
           {/* Attack Mode */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
-            <div className="mb-6">
-              <h2 className="text-4xl font-black text-white mb-4">
-                ⚔️ ATTACK
-              </h2>
-              <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                Master <strong className="text-white">MCQs with confidence</strong>, reflection, and beast-like intensity.
-              </p>
-            </div>
-            
-            <div className="text-left space-y-3 mb-6">
-              <div className="flex items-center text-slate-200">
-                <span className="text-red-400 mr-3">🔥</span>
-                <span>Timed battle sessions</span>
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 min-h-[480px] flex flex-col justify-between">
+            <div>
+              <div className="mb-6">
+                <h2 className="text-4xl font-black text-white mb-4 caret-transparent select-none">
+                  ⚔️ ATTACK
+                </h2>
+                <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                  Master <strong className="text-white">MCQs with confidence</strong>, reflection, and beast-like intensity.
+                </p>
               </div>
-              <div className="flex items-center text-slate-200">
-                <span className="text-red-400 mr-3">🎯</span>
-                <span>Confidence tracking & reflection</span>
-              </div>
-              <div className="flex items-center text-slate-200">
-                <span className="text-red-400 mr-3">⚡</span>
-                <span>Beast-mode streaks & gamification</span>
+              
+              <div className="text-left space-y-3 mb-6">
+                <div className="flex items-center text-slate-200">
+                  <span className="text-red-400 mr-3">🔥</span>
+                  <span>Timed battle sessions</span>
+                </div>
+                <div className="flex items-center text-slate-200">
+                  <span className="text-red-400 mr-3">🎯</span>
+                  <span>Confidence tracking & reflection</span>
+                </div>
+                <div className="flex items-center text-slate-200">
+                  <span className="text-red-400 mr-3">⚡</span>
+                  <span>Beast-mode streaks & gamification</span>
+                </div>
               </div>
             </div>
 
@@ -96,28 +100,30 @@ const Index = () => {
           </div>
 
           {/* War Mode */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8">
-            <div className="mb-6">
-              <h2 className="text-4xl font-black text-white mb-4">
-                🏹 WAR
-              </h2>
-              <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                Prepare like a <strong className="text-white">warrior</strong>. Mock battles, pressure drills, and strategic training for the real fight.
-              </p>
-            </div>
-            
-            <div className="text-left space-y-3 mb-6">
-              <div className="flex items-center text-slate-200">
-                <span className="text-orange-400 mr-3">🎯</span>
-                <span>Full-length & subject-wise drills</span>
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 min-h-[480px] flex flex-col justify-between">
+            <div>
+              <div className="mb-6">
+                <h2 className="text-4xl font-black text-white mb-4 caret-transparent select-none">
+                  🏹 WAR
+                </h2>
+                <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                  Prepare like a <strong className="text-white">warrior</strong>. Mock battles, exam pressure drills, and strategic training.
+                </p>
               </div>
-              <div className="flex items-center text-slate-200">
-                <span className="text-orange-400 mr-3">⚔️</span>
-                <span>War-tuned environment for pressure training</span>
-              </div>
-              <div className="flex items-center text-slate-200">
-                <span className="text-orange-400 mr-3">📊</span>
-                <span>Expose weaknesses before the real battle</span>
+              
+              <div className="text-left space-y-3 mb-6">
+                <div className="flex items-center text-slate-200">
+                  <span className="text-orange-400 mr-3">🎯</span>
+                  <span>Full-length & subject-wise drills</span>
+                </div>
+                <div className="flex items-center text-slate-200">
+                  <span className="text-orange-400 mr-3">⚔️</span>
+                  <span>Exam pressure training environment</span>
+                </div>
+                <div className="flex items-center text-slate-200">
+                  <span className="text-orange-400 mr-3">📊</span>
+                  <span>Expose weaknesses before battle</span>
+                </div>
               </div>
             </div>
 
